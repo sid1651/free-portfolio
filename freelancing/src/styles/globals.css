@@ -1,0 +1,358 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@theme inline {
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(
+        --radix-accordion-content-height,
+        var(--accordion-panel-height, auto)
+      );
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(
+        --radix-accordion-content-height,
+        var(--accordion-panel-height, auto)
+      );
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@custom-variant data-open {
+  &:where([data-state="open"]),
+  &:where([data-open]:not([data-open="false"])) {
+    @slot;
+  }
+}
+
+@custom-variant data-closed {
+  &:where([data-state="closed"]),
+  &:where([data-closed]:not([data-closed="false"])) {
+    @slot;
+  }
+}
+
+@custom-variant data-checked {
+  &:where([data-state="checked"]),
+  &:where([data-checked]:not([data-checked="false"])) {
+    @slot;
+  }
+}
+
+@custom-variant data-unchecked {
+  &:where([data-state="unchecked"]),
+  &:where([data-unchecked]:not([data-unchecked="false"])) {
+    @slot;
+  }
+}
+
+@custom-variant data-selected {
+  &:where([data-selected="true"]) {
+    @slot;
+  }
+}
+
+@custom-variant data-disabled {
+  &:where([data-disabled="true"]),
+  &:where([data-disabled]:not([data-disabled="false"])) {
+    @slot;
+  }
+}
+
+@custom-variant data-active {
+  &:where([data-state="active"]),
+  &:where([data-active]:not([data-active="false"])) {
+    @slot;
+  }
+}
+
+@custom-variant data-horizontal {
+  &:where([data-orientation="horizontal"]) {
+    @slot;
+  }
+}
+
+@custom-variant data-vertical {
+  &:where([data-orientation="vertical"]) {
+    @slot;
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@theme inline {
+    --font-sans: var(--font-app-sans, ui-sans-serif, system-ui, sans-serif);
+    --font-mono: var(--font-app-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+    --font-heading: var(--font-app-heading, var(--font-app-sans, ui-sans-serif, system-ui, sans-serif));
+}
+
+@theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+
+}
+
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* ─────────────────────────────────────────────
+   SELORA — editorial art-direction system
+   ───────────────────────────────────────────── */
+
+@theme {
+    --color-ink: #050609;
+    --color-ink-soft: #0a0c11;
+    --color-acid: #f4521c;
+    --color-acid-dim: #b8390e;
+    --color-bone: #f2f2f2;
+    --color-ash: #d9d9d9;
+    --color-smoke: #adadad;
+    --color-dust: #6e6e6e;
+    --color-hairline: #292929;
+    --color-graphite: #4a4a4a;
+}
+
+:root {
+    --background: #050609;
+    --foreground: #f2f2f2;
+    --card: #0a0c11;
+    --card-foreground: #f2f2f2;
+    --popover: #0a0c11;
+    --popover-foreground: #f2f2f2;
+    --primary: #f4521c;
+    --primary-foreground: #050609;
+    --secondary: #141820;
+    --secondary-foreground: #f2f2f2;
+    --muted: #141820;
+    --muted-foreground: #6e6e6e;
+    --accent: #f4521c;
+    --accent-foreground: #050609;
+    --destructive: #ff4444;
+    --border: #292929;
+    --input: #292929;
+    --ring: #f4521c;
+    --radius: 0px;
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        background-color: #050609;
+        color: #f2f2f2;
+        overflow-x: hidden;
+    }
+
+    html {
+        @apply font-sans antialiased;
+        background-color: #050609;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    ::selection {
+        background: #f4521c;
+        color: #050609;
+    }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/* Editorial utilities ───────────────────────── */
+
+@utility label-mono {
+    font-family: var(--font-app-mono, ui-monospace, monospace);
+    font-size: 11px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* Same face and size, sentence case — for the "(Section)" markers. */
+@utility label-cased {
+    font-family: var(--font-app-mono, ui-monospace, monospace);
+    font-size: 11px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+}
+
+@utility display-tight {
+    font-family: var(--font-app-sans, ui-sans-serif, system-ui, sans-serif);
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 0.86;
+    text-transform: uppercase;
+}
+
+@utility edge-x {
+    padding-inline: 18px;
+
+    @media (min-width: 768px) {
+        padding-inline: 26px;
+    }
+
+    @media (min-width: 1536px) {
+        padding-inline: 32px;
+    }
+}
+
+@utility hairline {
+    background-color: #292929;
+}
+
+/* Motion primitives ─────────────────────────── */
+
+.split-word,
+.split-char {
+    display: inline-block;
+    will-change: transform, opacity;
+}
+
+/*
+ * Clip boxes get a sliver of extra room below the baseline so descenders are
+ * never sheared off by the mask, with a matching negative margin so the
+ * surrounding layout is untouched. Travel distances allow for it.
+ */
+.mask-box {
+    padding-bottom: 0.16em;
+    margin-bottom: -0.16em;
+}
+
+.grain-layer {
+    background-image: url('/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png');
+    background-repeat: repeat;
+    mix-blend-mode: overlay;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
+.media-clip {
+    overflow: hidden;
+    will-change: clip-path;
+}
+
+.noise-hover:hover .noise-target {
+    transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .split-word,
+    .split-char,
+    .marquee-track,
+    .media-clip {
+        transform: none !important;
+        opacity: 1 !important;
+        clip-path: none !important;
+    }
+
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
