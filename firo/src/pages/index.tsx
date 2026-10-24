@@ -11,7 +11,7 @@ const highlights = [
 ]
 
 const Home = () => <EstateShell home>
-    <Seo title='A considered way to live' description='Discover Aranya Residences, a concept for contemporary living with thoughtful homes, natural spaces and an effortless sense of belonging.' ogImage='/images/estate/residences-hero.jpg' />
+    <Seo title='A considered way to live' description='Explore a Godrej Properties inspired concept for contemporary living with thoughtful homes, natural spaces and an effortless sense of belonging.' ogImage='/images/estate/residences-hero.jpg' />
     <main>
         <section className='estate-hero' aria-labelledby='hero-title'>
             <Image src='/images/estate/residences-hero.jpg' alt='Contemporary residences surrounded by greenery beside a reflecting pool' fill priority sizes='100vw' className='estate-hero__image' />
@@ -30,7 +30,7 @@ const Home = () => <EstateShell home>
 
         <section className='estate-intro estate-section' id='overview' aria-labelledby='overview-title'>
             <div className='estate-container estate-intro__grid'>
-                <div><p className='estate-kicker'>The Aranya experience</p><h2 id='overview-title' className='estate-display'>Life feels different<br />when it has <em>space.</em></h2></div>
+                <div><p className='estate-kicker'>The living experience</p><h2 id='overview-title' className='estate-display'>Life feels different<br />when it has <em>space.</em></h2></div>
                 <div className='estate-intro__aside'><p>Imagine a home that gives you more than somewhere to be. A place for slow mornings, lively evenings and everything in between.</p><Link href='/contact' className='estate-text-link'>Discover your next home <MoveUpRight size={18} aria-hidden='true' /></Link></div>
             </div>
             <div className='estate-container estate-intro__divider'><span>Designed for living well</span><span>01 / 04</span></div>
@@ -45,7 +45,7 @@ const Home = () => <EstateShell home>
 
         <section className='estate-garden' aria-labelledby='garden-title'><Image src='/images/estate/garden-courtyard.jpg' alt='Landscaped garden courtyard and calm reflecting pool' fill sizes='100vw' /><div className='estate-garden__overlay' /><div className='estate-container estate-garden__content'><p className='estate-kicker estate-kicker--light'>Nature in every day</p><h2 id='garden-title'>Find your<br /><em>own pace.</em></h2><p>Green spaces, open air and places to pause bring balance to the rhythm of city life.</p></div></section>
 
-        <section className='estate-location estate-section' id='location' aria-labelledby='location-title'><div className='estate-container estate-location__grid'><div><p className='estate-kicker'>Connected living</p><h2 id='location-title' className='estate-display'>At the centre of<br /><em>your world.</em></h2></div><div className='estate-location__copy'><p>Close to the energy of the city, with the comfort of a retreat to return to. Aranya is a vision of home that makes both feel possible.</p><p className='estate-location__note'>Project location and connectivity details will be added when confirmed.</p><Link href='/contact' className='estate-text-link'>Speak with us <MoveUpRight size={18} aria-hidden='true' /></Link></div></div></section>
+        <section className='estate-location estate-section' id='location' aria-labelledby='location-title'><div className='estate-container estate-location__grid'><div><p className='estate-kicker'>Connected living</p><h2 id='location-title' className='estate-display'>At the centre of<br /><em>your world.</em></h2></div><div className='estate-location__copy'><p>Close to the energy of the city, with the comfort of a retreat to return to. This vision of home brings both within reach.</p><p className='estate-location__note'>Project location and connectivity details will be added when confirmed.</p><Link href='/contact' className='estate-text-link'>Speak with us <MoveUpRight size={18} aria-hidden='true' /></Link></div></div></section>
 
         <section className='estate-cta' aria-labelledby='cta-title'><div className='estate-container estate-cta__inner'><div><p className='estate-kicker estate-kicker--light'>Start a conversation</p><h2 id='cta-title'>Your next chapter<br /><em>starts here.</em></h2></div><Link href='/contact' className='estate-button estate-button--light'>Contact us <ArrowRight size={18} aria-hidden='true' /></Link></div></section>
     </main>

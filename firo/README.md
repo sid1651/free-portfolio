@@ -1,6 +1,6 @@
-# Aranya Residences concept site
+# Godrej Properties concept site
 
-A responsive real estate concept website built with Next.js. It has a single landing page and a separate contact page. The Aranya name, copy and generated property imagery are illustrative; replace them with verified project details before launch.
+A responsive real estate concept website built with Next.js. It has a single landing page and a separate contact page. This is an independent concept, not an official Godrej Properties website. The copy and generated property imagery are illustrative; replace them with verified project details before use as a real project site.
 
 ## Run locally
 

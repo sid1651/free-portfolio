@@ -5,8 +5,8 @@ import { getOrigin } from '@/lib/window'
 export const CDN_URL = ''
 
 export const siteConfig: SiteConfig = {
-    name: 'Aranya Residences',
-    shortName: 'Aranya',
+    name: 'Godrej Properties',
+    shortName: 'Godrej',
     description: 'A considered vision for contemporary residential living.',
     url: getOrigin(),
     ogImage: '/images/estate/residences-hero.jpg',

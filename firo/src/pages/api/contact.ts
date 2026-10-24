@@ -36,7 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     const lines = [`Name: ${name}`, `Email: ${email}`, `Phone: ${phone}`, `Interested in: ${interest || 'Not specified'}`, `Message: ${message || 'Not provided'}`]
     try {
-        const sent = await sendEmail({ to: recipient, replyTo: email, subject: `Aranya enquiry from ${name}`.slice(0, 200), text: lines.join('\n'), html: `<h2>New Aranya enquiry</h2>${lines.map(line => `<p>${escapeHtml(line)}</p>`).join('')}`, tags: [{ name: 'type', value: 'estate-contact' }] })
+        const sent = await sendEmail({ to: recipient, replyTo: email, subject: `Godrej Properties enquiry from ${name}`.slice(0, 200), text: lines.join('\n'), html: `<h2>New Godrej Properties enquiry</h2>${lines.map(line => `<p>${escapeHtml(line)}</p>`).join('')}`, tags: [{ name: 'type', value: 'estate-contact' }] })
         if (!sent.accepted.includes(recipient)) throw new Error(sent.reason || 'The recipient was not accepted.')
         return res.status(200).json({ ok: true })
     } catch (error) {

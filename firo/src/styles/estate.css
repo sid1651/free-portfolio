@@ -76,7 +76,7 @@
 .estate-cta .estate-button { margin-bottom:7px }
 .estate-footer { background:var(--estate-deep); color:#e8eee7; padding:80px 0 25px }
 .estate-footer__top,.estate-footer__bottom { display:flex; justify-content:space-between; gap:30px }
-.estate-footer__brand { font-size:33px; letter-spacing:.23em; margin-bottom:15px!important }
+.estate-footer__brand { font-size:clamp(20px,2.5vw,33px); letter-spacing:.12em; margin-bottom:15px!important }
 .estate-footer__top>div>p:last-child { color:#a6baae; font:italic 20px Georgia,serif }
 .estate-footer__links { display:flex; align-items:start; gap:35px; font-size:12px }
 .estate-footer__links a { color:inherit }
