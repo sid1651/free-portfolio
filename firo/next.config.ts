@@ -4,10 +4,15 @@ const nextConfig: NextConfig = {
     output: 'standalone',
     poweredByHeader: false,
     devIndicators: false,
-    typescript: {
-        ignoreBuildErrors: true
-    },
+    allowedDevOrigins: ['192.168.1.2'],
     productionBrowserSourceMaps: false,
+    async redirects() {
+        return [
+            { source: '/about', destination: '/', permanent: false },
+            { source: '/projects/:path*', destination: '/', permanent: false },
+            { source: '/blog/:path*', destination: '/', permanent: false }
+        ]
+    },
     images: {
         remotePatterns: [
             {
