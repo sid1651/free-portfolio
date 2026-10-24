@@ -107,7 +107,82 @@
 .estate-message-page { min-height:60dvh; padding-block:110px 150px }
 .estate-message-page h1 { font:400 clamp(65px,8vw,110px)/.97 Georgia,serif; letter-spacing:-.065em; color:var(--estate-forest); margin-bottom:25px }
 .estate-message-page>p:not(.estate-kicker) { color:#65766b; font-size:16px; margin-bottom:35px }
+.estate-small-note { font-size:12px!important; line-height:1.55!important; color:#7a8b80!important; margin-top:-10px!important; margin-bottom:25px!important }
+.estate-section-heading { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(260px,.55fr); align-items:end; gap:60px; margin-bottom:65px }
+.estate-section-heading>p { max-width:360px; color:#65766b; font-size:16px; line-height:1.7 }
+.estate-gallery { background:var(--estate-paper) }
+.estate-gallery__grid { display:grid; grid-template-columns:1.15fr .85fr; grid-template-rows:repeat(2,300px); gap:18px }
+.estate-gallery__item { position:relative; overflow:hidden; margin:0; background:#d5ddd5 }
+.estate-gallery__item--1 { grid-row:span 2 }
+.estate-gallery__item img { object-fit:cover; transition:transform .6s cubic-bezier(.2,.7,.2,1) }
+.estate-gallery__item:hover img { transform:scale(1.03) }
+.estate-gallery__item--2 img { object-position:center 55% }
+.estate-gallery__item figcaption { position:absolute; inset:auto 0 0; display:flex; justify-content:space-between; align-items:center; gap:15px; padding:42px 25px 22px; color:white; background:linear-gradient(transparent,rgba(9,31,23,.65)); font:italic 24px Georgia,serif }
+.estate-gallery__item figcaption span { font:700 10px Arial,Helvetica,sans-serif; letter-spacing:.14em }
+.estate-options { background:var(--estate-cream) }
+.estate-options__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px }
+.estate-option { min-height:340px; display:flex; flex-direction:column; justify-content:space-between; padding:30px; background:var(--estate-paper); border:1px solid #e4e5dd }
+.estate-option__number,.estate-option__type { color:#71917d; font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase }
+.estate-option__type { margin-bottom:18px!important }
+.estate-option h3 { font:400 36px/1.08 Georgia,serif; letter-spacing:-.04em; margin-bottom:15px }
+.estate-option div>p:last-child { color:#63766a; font-size:14px; line-height:1.65; max-width:310px }
+.estate-option>a { align-self:flex-end; display:grid; place-items:center; width:36px; height:36px; border:1px solid #aabbb0; color:var(--estate-forest); transition:background .2s,color .2s }
+.estate-option>a:hover { background:var(--estate-forest); color:white }
+.estate-disclaimer { margin-top:20px!important; color:#718075; font-size:11px; line-height:1.5 }
+.estate-amenities { background:#e8eee6 }
+.estate-amenities__grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid #b6c8b8; border-bottom:1px solid #b6c8b8 }
+.estate-amenity { padding:34px 26px 40px; border-right:1px solid #b6c8b8 }
+.estate-amenity:first-child { padding-left:0 }
+.estate-amenity:last-child { border-right:0 }
+.estate-amenity>span,.estate-connectivity__grid article>span,.estate-specs__grid article>span,.estate-reasons__grid article>span { display:block; color:#72907b; font-size:11px; font-weight:700; letter-spacing:.14em }
+.estate-amenity h3 { margin:34px 0 30px; font:400 29px/1.1 Georgia,serif; letter-spacing:-.04em }
+.estate-amenity ul { list-style:none; padding:0; margin:0 }
+.estate-amenity li { padding:11px 0; border-top:1px solid #c6d3c6; color:#5d7163; font-size:13px; line-height:1.4 }
+.estate-plans { background:var(--estate-paper) }
+.estate-plans__grid { display:grid; grid-template-columns:1fr .8fr; gap:clamp(60px,8vw,150px); align-items:center }
+.estate-plans__grid>div:first-child>p:not(.estate-kicker) { max-width:500px; color:#63766a; font-size:16px; line-height:1.7; margin:28px 0 30px!important }
+.estate-plans__panel { padding:45px; background:var(--estate-cream); border:1px solid #e1e4d9 }
+.estate-plans__eyebrow { display:block; color:#71917d; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.18em; margin-bottom:35px }
+.estate-plans__panel>div { display:grid; grid-template-columns:35px 1fr; gap:15px; padding:19px 0; border-top:1px solid #ced7cb }
+.estate-plans__panel>div>span { color:#799381; font-size:11px; font-weight:700 }
+.estate-plans__panel>div>p { max-width:350px; font:400 21px/1.3 Georgia,serif; letter-spacing:-.025em }
+.estate-plans__note { color:#7a8b80; font-size:11px; line-height:1.5; margin-top:26px!important }
+.estate-connectivity { background:var(--estate-paper) }
+.estate-connectivity__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px }
+.estate-connectivity__grid article { padding:28px 0 0; border-top:1px solid var(--estate-line) }
+.estate-connectivity__grid h3 { margin:32px 0 15px; font:400 30px/1.15 Georgia,serif; letter-spacing:-.035em }
+.estate-connectivity__grid p { max-width:350px; color:#65766b; font-size:14px; line-height:1.7 }
+.estate-specs { background:var(--estate-cream) }
+.estate-specs__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 60px; border-top:1px solid #cad4c9 }
+.estate-specs__grid article { display:grid; grid-template-columns:42px 1fr; gap:14px; padding:30px 0 32px; border-bottom:1px solid #cad4c9 }
+.estate-specs__grid h3 { font:400 28px/1.2 Georgia,serif; letter-spacing:-.035em; margin-bottom:12px }
+.estate-specs__grid p { max-width:410px; color:#65766b; font-size:14px; line-height:1.65 }
+.estate-reasons { background:var(--estate-forest); color:white }
+.estate-reasons h2 { font:400 clamp(52px,6vw,96px)/.99 Georgia,serif; letter-spacing:-.057em; max-width:1100px }
+.estate-reasons__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:45px; margin-top:85px }
+.estate-reasons__grid article { border-top:1px solid #6d8978; padding-top:26px }
+.estate-reasons__grid article>span { color:#afc7b4 }
+.estate-reasons__grid h3 { margin:42px 0 16px; font:400 29px/1.15 Georgia,serif; letter-spacing:-.035em }
+.estate-reasons__grid p { max-width:340px; color:#d0dfd3; font-size:14px; line-height:1.7 }
+.estate-checklist { background:var(--estate-paper) }
+.estate-checklist__grid { display:grid; grid-template-columns:1.15fr .85fr; gap:70px; align-items:center }
+.estate-checklist__grid>div:last-child>p { max-width:470px; color:#63766a; font-size:16px; line-height:1.75; margin-bottom:18px!important }
+.estate-checklist__grid .estate-text-link { margin-top:14px }
+.estate-faq { background:var(--estate-cream) }
+.estate-faq__grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(50px,8vw,140px) }
+.estate-faq__grid>div:first-child>p:last-child { color:#65766b; font-size:15px; line-height:1.6; max-width:300px; margin-top:25px!important }
+.estate-faq__list { border-top:1px solid #cbd5c9 }
+.estate-faq__list details { border-bottom:1px solid #cbd5c9 }
+.estate-faq__list summary { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:23px 0; cursor:pointer; list-style:none; color:var(--estate-forest); font-size:15px; font-weight:700; line-height:1.4 }
+.estate-faq__list summary::-webkit-details-marker { display:none }
+.estate-faq__list summary span { flex:none; font:400 24px/1 Georgia,serif; transition:transform .2s }
+.estate-faq__list details[open] summary span { transform:rotate(45deg) }
+.estate-faq__list details>p { max-width:650px; padding:0 32px 24px 0; color:#63766a; font-size:14px; line-height:1.7 }
+.estate-app a:focus-visible,.estate-app button:focus-visible,.estate-faq__list summary:focus-visible { outline:2px solid #769c83; outline-offset:4px }
 @media(max-width:1050px){.estate-nav { gap:18px }.estate-header__inner { gap:22px }.estate-container { width:min(100% - 50px,1420px) }.estate-image-story__body { padding:60px 42px }}
 @media(max-width:800px){.estate-header { height:72px }.estate-header__contact,.estate-nav { display:none }.estate-header__menu { display:block }.estate-nav--open { display:flex; position:absolute; inset:72px 0 auto; background:var(--estate-paper); color:var(--estate-forest); padding:30px 25px 38px; flex-direction:column; align-items:stretch; gap:24px; box-shadow:0 18px 30px rgba(0,0,0,.12) }.estate-nav--open a { font-size:15px }.estate-nav__mobile-contact { display:block }.estate-hero { height:740px; min-height:680px }.estate-hero__content { padding-top:60px }.estate-hero__corner { display:none }.estate-intro__grid,.estate-location__grid,.estate-image-story,.estate-contact-hero { grid-template-columns:1fr }.estate-intro__grid,.estate-location__grid { gap:34px }.estate-intro__divider { margin-top:65px }.estate-image-story__visual { min-height:440px }.estate-image-story__body { padding:70px 25px }.estate-highlights__grid { margin-top:55px }.estate-highlight { padding-right:20px }.estate-highlight+.estate-highlight { padding-left:20px }.estate-garden { min-height:580px }.estate-contact-hero { padding-top:30px; gap:50px }.estate-back { margin-bottom:60px }.estate-contact-hero__image { height:250px; margin-top:35px }.estate-contact-hero__form { padding:45px 30px }}
 @media(max-width:600px){.estate-container { width:calc(100% - 40px) }.estate-section { padding-block:80px }.estate-brand__mark { width:36px;height:36px;font-size:24px }.estate-brand__word { font-size:15px }.estate-brand__word span { font-size:7px }.estate-hero { height:690px; min-height:620px }.estate-hero__image { object-position:65% center }.estate-hero__shade { background:linear-gradient(90deg,rgba(9,31,23,.7),rgba(9,31,23,.28)),linear-gradient(0deg,rgba(9,31,23,.4),transparent 40%) }.estate-hero h1 { font-size:clamp(61px,16vw,90px) }.estate-hero__lead { font-size:15px; max-width:290px }.estate-hero__scroll { bottom:25px }.estate-display { font-size:clamp(45px,11vw,63px) }.estate-intro__aside p,.estate-image-story__body>p:not(.estate-kicker),.estate-location__copy>p:first-child { font-size:15px }.estate-image-story__visual { min-height:330px }.estate-image-story__body { padding:75px 20px }.estate-highlights__grid { grid-template-columns:1fr }.estate-highlight,.estate-highlight+.estate-highlight { min-height:auto; padding:24px 0 30px; border-right:0; border-bottom:1px solid var(--estate-line) }.estate-highlight h3 { margin:25px 0 8px }.estate-garden { min-height:570px }.estate-garden h2 { font-size:clamp(62px,15vw,85px) }.estate-garden__overlay { background:rgba(8,32,22,.45) }.estate-cta { padding:75px 0 }.estate-cta__inner { align-items:start; flex-direction:column }.estate-cta h2 { font-size:clamp(54px,11vw,70px) }.estate-footer { padding-top:60px }.estate-footer__top,.estate-footer__bottom { flex-direction:column }.estate-footer__bottom { margin-top:60px; gap:10px }.estate-contact-hero { padding-bottom:80px }.estate-contact-hero__intro h1 { font-size:clamp(65px,14vw,86px) }.estate-contact-hero__form { padding:37px 20px }.estate-form__row { grid-template-columns:1fr; gap:22px }}
 @media(prefers-reduced-motion:reduce){.estate-app *, .estate-app *::before,.estate-app *::after { scroll-behavior:auto!important; transition:none!important; animation:none!important }}
+@media(max-width:1050px){.estate-amenities__grid { grid-template-columns:repeat(2,minmax(0,1fr)) }.estate-amenity:nth-child(2) { border-right:0 }.estate-amenity:nth-child(-n+2) { border-bottom:1px solid #b6c8b8 }.estate-amenity:nth-child(3) { padding-left:0 }.estate-reasons__grid { gap:28px }}
+@media(max-width:800px){.estate-section-heading,.estate-plans__grid,.estate-checklist__grid,.estate-faq__grid { grid-template-columns:1fr; gap:30px }.estate-section-heading { margin-bottom:40px }.estate-options__grid { grid-template-columns:1fr }.estate-option { min-height:260px }.estate-gallery__grid { grid-template-rows:repeat(2,220px) }.estate-connectivity__grid,.estate-reasons__grid { grid-template-columns:1fr; gap:32px }.estate-reasons__grid { margin-top:55px }.estate-reasons__grid h3 { margin-top:23px }.estate-specs__grid { gap:0 30px }.estate-plans__panel { padding:32px }.estate-faq__grid { gap:55px }}
+@media(max-width:600px){.estate-gallery__grid { display:flex; flex-direction:column; gap:12px }.estate-gallery__item { height:250px }.estate-gallery__item--1 { height:380px }.estate-gallery__item figcaption { font-size:21px }.estate-section-heading>p { font-size:14px }.estate-option { padding:25px }.estate-option h3 { font-size:31px }.estate-amenities__grid { grid-template-columns:1fr }.estate-amenity,.estate-amenity:first-child,.estate-amenity:nth-child(3) { padding:28px 0; border-right:0; border-bottom:1px solid #b6c8b8 }.estate-amenity:last-child { border-bottom:0 }.estate-amenity h3 { margin:20px 0 }.estate-amenity li { padding:9px 0 }.estate-plans__panel { padding:25px }.estate-plans__panel>div>p { font-size:19px }.estate-specs__grid { grid-template-columns:1fr }.estate-reasons h2 { font-size:clamp(47px,11vw,68px) }.estate-reasons__grid { gap:26px }.estate-checklist__grid>div:last-child>p { font-size:14px }.estate-faq__list summary { font-size:14px }}

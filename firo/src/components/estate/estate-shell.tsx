@@ -3,7 +3,7 @@ import { useState, type ReactNode } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 
 type EstateShellProps = { children: ReactNode, home?: boolean }
-const links = [{ label: 'Overview', href: '/#overview' }, { label: 'Residences', href: '/#residences' }, { label: 'Lifestyle', href: '/#lifestyle' }, { label: 'Location', href: '/#location' }]
+const links = [{ label: 'Overview', href: '/#overview' }, { label: 'Homes', href: '/#home-options' }, { label: 'Amenities', href: '/#amenities' }, { label: 'Location', href: '/#location' }, { label: 'FAQs', href: '/#faq' }]
 
 export const EstateShell = ({ children, home = false }: EstateShellProps) => {
     const [menuOpen, setMenuOpen] = useState(false)
