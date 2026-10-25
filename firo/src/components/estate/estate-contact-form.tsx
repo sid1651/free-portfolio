@@ -6,15 +6,22 @@ const initial: FormState = { name: '', email: '', phone: '', interest: '', messa
 
 export const EstateContactForm = () => {
     const [form, setForm] = useState<FormState>(initial)
-    const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+    const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'email' | 'error'>('idle')
     const [error, setError] = useState('')
-    const update = (field: keyof FormState) => (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => { setForm(previous => ({ ...previous, [field]: event.target.value })); if (status === 'error') setStatus('idle') }
+    const update = (field: keyof FormState) => (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => { setForm(previous => ({ ...previous, [field]: event.target.value })); if (status === 'error' || status === 'email') setStatus('idle') }
 
     const submit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault(); setStatus('sending'); setError('')
         try {
             const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) })
             const result = await response.json()
+            if (response.status === 503) {
+                const subject = encodeURIComponent('Global Business City enquiry')
+                const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nInterested in: ${form.interest || 'Not specified'}\n\n${form.message || 'Please send me current project details.'}`)
+                setStatus('email')
+                window.location.href = `mailto:salesOfficial@gmail.com?subject=${subject}&body=${body}`
+                return
+            }
             if (!response.ok || !result.ok) throw new Error(result.message || 'Your enquiry could not be sent. Please try again.')
             setForm(initial); setStatus('sent')
         } catch (cause) { setError(cause instanceof Error ? cause.message : 'Your enquiry could not be sent. Please try again.'); setStatus('error') }
@@ -27,6 +34,7 @@ export const EstateContactForm = () => {
         <label className='estate-form__honeypot' aria-hidden='true'>Company<input name='company' tabIndex={-1} autoComplete='off' value={form.company} onChange={update('company')} /></label>
         <p className='estate-form__privacy'>We’ll use your details only to respond to your enquiry.</p>
         {status === 'sent' && <p className='estate-form__feedback estate-form__feedback--success' role='status'>Thank you. Your enquiry has been sent.</p>}
+        {status === 'email' && <p className='estate-form__feedback estate-form__feedback--success' role='status'>Your email app should open a prepared message. Please send it there to complete your enquiry. You can also email salesOfficial@gmail.com directly.</p>}
         {status === 'error' && <p className='estate-form__feedback estate-form__feedback--error' role='alert'>{error}</p>}
         <button className='estate-button estate-button--green' type='submit' disabled={status === 'sending'}>{status === 'sending' ? 'Sending...' : 'Send enquiry'} <ArrowRight size={18} aria-hidden='true' /></button>
     </form>

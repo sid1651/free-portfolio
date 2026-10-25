@@ -186,3 +186,31 @@
 @media(max-width:1050px){.estate-amenities__grid { grid-template-columns:repeat(2,minmax(0,1fr)) }.estate-amenity:nth-child(2) { border-right:0 }.estate-amenity:nth-child(-n+2) { border-bottom:1px solid #b6c8b8 }.estate-amenity:nth-child(3) { padding-left:0 }.estate-reasons__grid { gap:28px }}
 @media(max-width:800px){.estate-section-heading,.estate-plans__grid,.estate-checklist__grid,.estate-faq__grid { grid-template-columns:1fr; gap:30px }.estate-section-heading { margin-bottom:40px }.estate-options__grid { grid-template-columns:1fr }.estate-option { min-height:260px }.estate-gallery__grid { grid-template-rows:repeat(2,220px) }.estate-connectivity__grid,.estate-reasons__grid { grid-template-columns:1fr; gap:32px }.estate-reasons__grid { margin-top:55px }.estate-reasons__grid h3 { margin-top:23px }.estate-specs__grid { gap:0 30px }.estate-plans__panel { padding:32px }.estate-faq__grid { gap:55px }}
 @media(max-width:600px){.estate-gallery__grid { display:flex; flex-direction:column; gap:12px }.estate-gallery__item { height:250px }.estate-gallery__item--1 { height:380px }.estate-gallery__item figcaption { font-size:21px }.estate-section-heading>p { font-size:14px }.estate-option { padding:25px }.estate-option h3 { font-size:31px }.estate-amenities__grid { grid-template-columns:1fr }.estate-amenity,.estate-amenity:first-child,.estate-amenity:nth-child(3) { padding:28px 0; border-right:0; border-bottom:1px solid #b6c8b8 }.estate-amenity:last-child { border-bottom:0 }.estate-amenity h3 { margin:20px 0 }.estate-amenity li { padding:9px 0 }.estate-plans__panel { padding:25px }.estate-plans__panel>div>p { font-size:19px }.estate-specs__grid { grid-template-columns:1fr }.estate-reasons h2 { font-size:clamp(47px,11vw,68px) }.estate-reasons__grid { gap:26px }.estate-checklist__grid>div:last-child>p { font-size:14px }.estate-faq__list summary { font-size:14px }}
+
+/* Global Business City presentation sections */
+.gbc-hero .estate-hero__copy { max-width:860px }
+.gbc-hero h1 { font-size:clamp(66px,8.6vw,140px) }
+.gbc-hero .estate-hero__shade { background:linear-gradient(90deg,rgba(9,31,23,.83),rgba(9,31,23,.38) 54%,rgba(9,31,23,.08)),linear-gradient(0deg,rgba(9,31,23,.45),transparent 30%) }
+.gbc-map-section { background:#e8eee6 }
+.gbc-slide { margin:0; background:white; border:1px solid #d6dfd4; padding:12px }
+.gbc-slide img { display:block; width:100%; height:auto }
+.gbc-slide figcaption { padding:13px 8px 3px; color:#67766c; font-size:11px; line-height:1.5; letter-spacing:.03em }
+.gbc-land-use { background:var(--estate-paper) }
+.gbc-land-use__grid { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(280px,.65fr); align-items:center; gap:clamp(28px,5vw,80px) }
+.gbc-land-use__list { border-top:1px solid var(--estate-line) }
+.gbc-land-use__list article { padding:25px 0; border-bottom:1px solid var(--estate-line) }
+.gbc-land-use__list span { color:#769784; font-size:10px; font-weight:700; letter-spacing:.14em }
+.gbc-land-use__list h3 { margin:16px 0 10px; font:400 clamp(25px,2.2vw,34px)/1.1 Georgia,serif; letter-spacing:-.04em }
+.gbc-land-use__list p { color:#65766b; font-size:13px; line-height:1.65 }
+.estate-amenity>p { color:#5d7163; font-size:13px; line-height:1.55 }
+.gbc-photo-band { position:relative; min-height:700px; display:flex; align-items:end; color:white; background:var(--estate-deep) }
+.gbc-photo-band>img { object-fit:cover; object-position:center }
+.gbc-photo-band__shade { position:absolute; inset:0; background:linear-gradient(0deg,rgba(9,31,23,.9),rgba(9,31,23,.15) 65%,transparent) }
+.gbc-photo-band__content { position:relative; padding-block:90px }
+.gbc-photo-band h2 { font:400 clamp(57px,6.6vw,108px)/.96 Georgia,serif; letter-spacing:-.055em; margin-bottom:25px }
+.gbc-photo-band__content>p:last-child { max-width:460px; font-size:13px; line-height:1.7; color:#e9f0e9 }
+.estate-contact-hero__intro .estate-contact-hero__direct { margin-top:20px; font-size:13px; color:#52695b }
+.estate-contact-hero__direct a { color:var(--estate-forest); text-decoration:underline; text-underline-offset:3px }
+.estate-gallery__item--3 img { object-fit:contain; background:#e7ece8 }
+@media(max-width:800px){.gbc-land-use__grid { grid-template-columns:1fr }.gbc-land-use__list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px }.gbc-land-use__list article { border-bottom:0 }.gbc-photo-band { min-height:620px }}
+@media(max-width:600px){.gbc-hero h1 { font-size:clamp(57px,12vw,82px) }.gbc-hero .estate-hero__copy { max-width:100% }.gbc-hero .estate-hero__lead { max-width:320px }.gbc-slide { padding:5px }.gbc-slide figcaption { padding:10px 7px; font-size:10px }.gbc-land-use__list { grid-template-columns:1fr; gap:0 }.gbc-land-use__list article { border-bottom:1px solid var(--estate-line) }.gbc-photo-band { min-height:560px }.gbc-photo-band__content { padding-block:65px }.gbc-photo-band h2 { font-size:clamp(52px,12vw,72px) }}

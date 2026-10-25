@@ -3,7 +3,7 @@ import { useState, type ReactNode } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 
 type EstateShellProps = { children: ReactNode, home?: boolean }
-const links = [{ label: 'Overview', href: '/#overview' }, { label: 'Homes', href: '/#home-options' }, { label: 'Amenities', href: '/#amenities' }, { label: 'Location', href: '/#location' }, { label: 'FAQs', href: '/#faq' }]
+const links = [{ label: 'Overview', href: '/#overview' }, { label: 'Master plan', href: '/#master-plan' }, { label: 'Gallery', href: '/#gallery' }, { label: 'Homes', href: '/#home-options' }, { label: 'FAQs', href: '/#faq' }]
 
 export const EstateShell = ({ children, home = false }: EstateShellProps) => {
     const [menuOpen, setMenuOpen] = useState(false)
@@ -15,6 +15,6 @@ export const EstateShell = ({ children, home = false }: EstateShellProps) => {
             <button type='button' className='estate-header__menu' aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={25} /> : <Menu size={25} />}</button>
         </div></header>
         {children}
-        <footer className='estate-footer'><div className='estate-container'><div className='estate-footer__top'><div><p className='estate-footer__brand'>GODREJ PROPERTIES</p><p>Space for a life well lived.</p></div><div className='estate-footer__links'><Link href='/'>Home</Link><Link href='/contact'>Contact</Link></div></div><div className='estate-footer__bottom'><span>© {new Date().getFullYear()} Godrej Properties</span><span>Independent concept site. Details and imagery are illustrative.</span></div></div></footer>
+        <footer className='estate-footer'><div className='estate-container'><div className='estate-footer__top'><div><p className='estate-footer__brand'>GODREJ PROPERTIES</p><p>Global Business City · Greater Noida</p></div><div className='estate-footer__links'><Link href='/'>Home</Link><Link href='/contact'>Contact</Link></div></div><div className='estate-footer__bottom'><span>© {new Date().getFullYear()} Godrej Properties concept</span><span>Independent concept using supplied presentations. Verify all project details with official sources.</span></div></div></footer>
     </div>
 }
